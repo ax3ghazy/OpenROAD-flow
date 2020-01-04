@@ -10,6 +10,26 @@ if {![info exists standalone] || $standalone} {
   read_sdc $::env(RESULTS_DIR)/1_synth.sdc
 }
 
+proc fix_macro_as_west {} {
+  set db [::ord::get_db]
+  set block [[$db getChip] getBlock]
+  foreach inst [$block getInsts] {
+    set inst_master [$inst getMaster]
+
+    # BLOCK means MACRO cells
+    # Set macrocells as West
+    if { [string match [$inst_master getType] "BLOCK"] } {
+      $inst setOrient R90
+      $inst setPlacementStatus PLACED
+      $inst setLocation 0 0
+    }
+  }
+  return
+}
+
+puts "Fix macro orientation for 65nm"
+fix_macro_as_west
+
 macro_placement -global_config $::env(IP_GLOBAL_CFG)
 
 if {![info exists standalone] || $standalone} {

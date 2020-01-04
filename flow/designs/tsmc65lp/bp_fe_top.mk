@@ -22,12 +22,12 @@ export ADDITIONAL_GDS  = ./platforms/tsmc65lp/gds/tsmc65lp_1rf_lg6_w8_bit.gds2 \
 export RUN_MACRO_PLACEMENT = 1
 
 # These values must be multiples of placement site
-export DIE_AREA    = 0 0 1200 1000.8
-export CORE_AREA   = 10 12 1190 991.2
-export CORE_WIDTH  = 1180
-export CORE_HEIGHT = 979.2
+export DIE_AREA    = 0 0 1300 1100.8
+export CORE_AREA   = 10 12 1290 1091.2
+export CORE_WIDTH  = 1280
+export CORE_HEIGHT = 1079.2
 
 export CLOCK_PERIOD = 5.600
 export CLOCK_PORT   = clk_i
 
-export PLACE_DENSITY = 0.50
+export PLACE_DENSITY = 0.43

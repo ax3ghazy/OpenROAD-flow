@@ -31,19 +31,19 @@ def replace_coords(match):
   # West side
   if match[1] == str(margin):
     countWest += 1
-    return "PLACED ( 0 " + match[2] + " ) E + LAYER " + match[3] + " ( " + str(margin*-1) + " 0 ) ( " + str(margin) + " " + str(margin*2) + " )"
+    return "PLACED ( 0 " + match[2] + " ) E + LAYER " + match[3] + " ( " + str(margin*-1) + " 0 ) ( " + str(margin) + " " + str(margin*11) + " )"
   # South side
   elif match[2] == str(margin):
     countSouth += 1
-    return "PLACED ( " + match[1] + " 0 ) N + LAYER " + match[3] + " ( " + str(margin*-1) + " 0 ) ( " + str(margin) + " " + str(margin*2) + " )"
+    return "PLACED ( " + match[1] + " 0 ) N + LAYER " + match[3] + " ( " + str(margin*-1) + " 0 ) ( " + str(margin) + " " + str(margin*11) + " )"
   # East side
   elif match[1] == str(width - margin):
     countEast += 1
-    return "PLACED ( "+ str(width) + " " + match[2] + " ) W + LAYER " + match[3] + " ( " + str(margin*-1) + " 0 ) ( " + str(margin) + " " + str(margin*2) + " )"
+    return "PLACED ( "+ str(width) + " " + match[2] + " ) W + LAYER " + match[3] + " ( " + str(margin*-1) + " 0 ) ( " + str(margin) + " " + str(margin*11) + " )"
   # North side
   elif match[2] == str(height - margin):
     countNorth += 1
-    return "PLACED ( " + match[1] + " " + str(height) + " ) S + LAYER " + match[3] + " ( " + str(margin*-1) + " 0 ) ( " + str(margin) + " " + str(margin*2) + " )"
+    return "PLACED ( " + match[1] + " " + str(height) + " ) S + LAYER " + match[3] + " ( " + str(margin*-1) + " 0 ) ( " + str(margin) + " " + str(margin*11) + " )"
   # Shouldn't happen
   else:
     countFail += 1

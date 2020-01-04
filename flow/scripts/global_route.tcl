@@ -10,6 +10,12 @@ if {![info exists standalone] || $standalone} {
 }
 
 set_wire_rc -layer $::env(WIRE_RC_LAYER)
+
+# Give detail route more space for fixing DRC
+fr_add_layer_adjustment 1 0.9
+fr_add_layer_adjustment 2 0.5
+fr_add_layer_adjustment 3 0.5
+
 fastroute -capacity_adjustment 0.15 -max_routing_layer $::env(MAX_ROUTING_LAYER) \
   -output_file $::env(RESULTS_DIR)/route.guide
 
